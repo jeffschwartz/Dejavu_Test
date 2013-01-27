@@ -14,6 +14,8 @@ define( ['dejavu', 'employee'], function ( dejavu, Employee ) {
 
         _department:null, // 1 underscore = protected property
 
+        __staff: [], // 2 underscores = private property
+
         initialize:function ( name, jobTitle, department ) {
             this.$super( name, jobTitle );
             this.setDepartment( department );
@@ -25,6 +27,14 @@ define( ['dejavu', 'employee'], function ( dejavu, Employee ) {
 
         getDepartment:function () {
             return this._department;
+        },
+
+        addStaff:function ( employee ) {
+            this.__staff.push( employee );
+        },
+
+        getStaff:function (  ) {
+            return this.__staff;
         }
 
     } );

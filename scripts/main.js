@@ -31,10 +31,8 @@ require( ['jquery', 'employee', 'manager'], function ( $, Employee, Manager ) {
     employees.forEach( function ( employee ) {
         console.log( 'An Employee object was instantiated. Name: ', employee.getName(), ' Job Title: ', employee.getJobTitle() );
         console.inspect( employee );
-    } );
 
-    // add each employee to their manager's staff
-    employees.forEach( function ( employee ) {
+        // add each employee to their manager's staff
         manager.addStaff( employee );
     } );
 

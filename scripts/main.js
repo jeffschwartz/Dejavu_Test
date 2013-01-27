@@ -44,4 +44,19 @@ require( ['jquery', 'employee', 'manager'], function ( $, Employee, Manager ) {
         console.log( 'Employee', managedEmployee.getName() + ',', 'who is a', managedEmployee.getJobTitle() + ',', 'works under manager', manager.getName() + ',', 'who is in charge of the', manager.getDepartment() );
     } );
 
+    // jQuery document.ready
+    $(function(){
+
+        // output manager/staff lists to the dom
+        var $body = $("body");
+        var content = "<ul><li class='manager'>Manager: " + manager.getName() + "; Job Title: " + manager.getJobTitle() + "; Manages: " + manager.getDepartment()  + "</li>";
+        content += "<ul>"
+        managedEmployees.forEach(function(managedEmployee){
+            content += "<li class='staff'>Staff: " + managedEmployee.getName() + "; Job Title: " + managedEmployee.getJobTitle() + "</li>";
+        });
+        content += "</ul>";
+        $body.html(content);
+
+    });
+
 } );

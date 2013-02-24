@@ -6,39 +6,37 @@ define( ['dejavu', 'employee'], function ( dejavu, Employee ) {
      * Manager is derived from Employee
      * Inherits name from Person, job title from Employee and also has a department
      */
-    var Manager = dejavu.Class.declare( {
+    return dejavu.Class.declare( {
 
-        $extends:Employee,
+        $extends : Employee,
 
-        $name:'Manager',
+        $name : 'Manager',
 
-        _department:null, // 1 underscore = protected property
+        _department : null, // 1 underscore = protected property
 
-        __staff: [], // 2 underscores = private property
+        __staff : [], // 2 underscores = private property
 
-        initialize:function ( name, jobTitle, department ) {
+        initialize : function ( name, jobTitle, department ) {
             this.$super( name, jobTitle );
             this.setDepartment( department );
         },
 
-        setDepartment:function ( department ) {
+        setDepartment : function ( department ) {
             this._department = department;
         },
 
-        getDepartment:function () {
+        getDepartment : function () {
             return this._department;
         },
 
-        addStaff:function ( employee ) {
+        addStaff : function ( employee ) {
             this.__staff.push( employee );
         },
 
-        getStaff:function (  ) {
+        getStaff : function () {
             return this.__staff;
         }
 
     } );
-
-    return Manager;
 
 } );
